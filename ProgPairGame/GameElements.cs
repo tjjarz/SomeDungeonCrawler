@@ -6,59 +6,42 @@ using System.Threading.Tasks;
 
 namespace ProgPairGame
 {
-    public class GameElements
-    {
-
-
-    }
-
+   
     public class Room 
     {
-
         public List<RoomObject> RoomContents { get; set; } = new List<RoomObject>();
-        public List<RoomObject> HiddenContents { get; set; } = new List<RoomObject>(); //for secrets!
+        public List<RoomObject> HiddenContents { get; set; } = new List<RoomObject>();
 
         public string Description { get; set; }
-
     }
 
     public class RoomObject
     {
-        public string Name { get; set; } //adding this back in so it can be searched against for the parser
+        public string Name { get; set; } 
         public string Type { get; set; }
         public string ID { get; set; }
         public string Verbage { get; set; }
         public string DescriptiveText { get; set; }
         public bool isLocked { get; set; } = false;
         public string LockID { get; set; }
-
         public int ConnectionA { get; set; }
         public int ConnectionB { get; set; }
-
-        public void Use()
-        {
-
-        }
     }
 
     public class Player
     {
         public string Name { get; set; }
-
         public int position { get; set; }
-        // inventory
         public List<RoomObject> Inventory { get; set; } = new List<RoomObject>();
         public bool IsAlive { get; set; } = true;
         public bool HasMacguffin { get; set; } = false;
         public bool IsAQuitter { get; set; } = false;
-        //actions
 
         public void Move(Player player, RoomObject target )
         {
             if (player.position == target.ConnectionA) { player.position = target.ConnectionB; }
 
             else if (player.position == target.ConnectionB) { player.position = target.ConnectionA; }
-
         }
 
         public string Use(RoomObject target, Player player,Room room)
@@ -81,7 +64,6 @@ namespace ProgPairGame
                     else { Move(player, target); }
                     return "you proceed down passageway, aided by your lit torch...";
                 case "door":
-                    //check door lock
                     if (target.isLocked)
                         {
                             if (CheckAccess()) 
@@ -93,7 +75,6 @@ namespace ProgPairGame
                         }
                     else { Move(player, target); }
                     return "you open the door...";
-                //newnew
                 case "door with combination lock":
                     if (target.isLocked)
                     {
@@ -121,7 +102,6 @@ namespace ProgPairGame
                 case "key":
                 
                 case "scroll":
-                    //add key to player inv and remove from room objects
                     player.Inventory.Add(target);
                     room.RoomContents.Remove(target);
                     return $"You pick up the {target.Type}...";
@@ -144,7 +124,6 @@ namespace ProgPairGame
                     
                     return "";
             }
-            //switch cases for each direction
 
             bool CheckAccess()
             {
@@ -155,7 +134,6 @@ namespace ProgPairGame
                         target.isLocked = false;
                         return true;
                     }
-
                 }
                 return false;
             }

@@ -18,30 +18,24 @@ namespace ProgPairGame
 
             Console.CursorVisible = false;
             Console.SetWindowSize(120, 31);
-            //string greet ="" +
-            //    "▐".PadRight(30) + "Welcome to SomeTextAdventure!"+ "▌\n".PadLeft(30) +
-            //    "▐".PadRight(30) + "NAME YOUR CHARACTER!!!!" + "▌\n".PadLeft(30);
 
             bool gameRunning = true;
             SplashScreen();
             player.Name = Console.ReadLine();
-            //bool playerhasKey = false;
-            //int roomnum = 0;
             Room currentRoom;
             string prompt = "What do you wish to do?";
-            //string interactionBox = "1. Open Door, 2. Go into Hallway, 3. pick up key";
 
             while (gameRunning)
             {
 
                 currentRoom = dungeon[player.position];
 
-                renderer(); //yes, 'renderer'
+                renderer(); 
                 string input = Console.ReadLine();
 
                 switch (input)
                 {
-                    case "1":   //should we handle invalid selections here or inside use?
+                    case "1":   
                         if (currentRoom.RoomContents.Count >= 1)
                         { prompt = player.Use(currentRoom.RoomContents[0], player, currentRoom); }
                         break;
@@ -83,7 +77,7 @@ namespace ProgPairGame
 
                         prompt = "What, do you think you can just make up the rules! you can't do that!";
                         break;
-                }//
+                }
                 if (player.IsAQuitter == true)
                     {
                     renderer();
@@ -115,10 +109,7 @@ namespace ProgPairGame
 
             void renderer()
             {
-                //should eventually offload this art to a text file maybe!!! could be cool to use special characters to programmatically load the different items
-                //for individual coloring... but that would like, that would take a minute I think :P
-                //like perhaps the 'renderer' actually foreaches through the characters and draws each one individually on the screen, 
-                //                                          changing color based on what character it is?
+
                 string linearttop = "" +
                     @"&╗===╔&__________________________________________________________________________________________________________&╗===╔&" +
                     @" ║ & ║ + | + | + | + | + | + | + | + | + | + | + | + | + |]<>[| + | + | + | + | + | + | + | + | + | + | + | + | + ║ & ║ " +
@@ -135,24 +126,6 @@ namespace ProgPairGame
                     @"@╝===╚@──────────────────────────────────────────────────────────────────────────────────────────────────────────@╝===╚@";
                 string leftcolumn = " ║ | ║    ";
                 string rightcolumn = "    ║ | ║ ";
-
-
-                //string descriptiontext = currentRoom.Description;
-                /*
-                string[] description = currentRoom.Description.Split(' ');
-
-                StringBuilder newDescription = new StringBuilder();
-
-                string line = "";
-                foreach (string word in description)
-                {
-                    if ((line+word).Length > 95)
-                    {
-                        newDescription.Append(line+Environment.NewLine);
-                        line = "";
-                    }
-                    line += word + " ";
-                }*/
 
                 Console.Clear();
                 Console.Write(linearttop); //lines 1-4
@@ -351,9 +324,8 @@ namespace ProgPairGame
                     RoomContents = {sweetloot, realloot, mural, secretpassage}
                 };
 
-                //need to resort this to reflect new dungeon layout!!!
-                //List<Room> newDungeon = new List<Room>();
-                dungeon.Add(room0); //starts here
+                
+                dungeon.Add(room0); 
                 dungeon.Add(room1);
                 dungeon.Add(room2);
                 dungeon.Add(room3);
@@ -361,7 +333,6 @@ namespace ProgPairGame
                 dungeon.Add(room5);
                 dungeon.Add(room6);
 
-                //return newDungeon;
             }
 
             void SplashScreen()
@@ -442,9 +413,6 @@ namespace ProgPairGame
                 }
                 else
                 {
-
-                    //Console.ForegroundColor = ConsoleColor.White;
-                    //Console.BackgroundColor = ConsoleColor.DarkCyan;
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.Write(lineset1);
                     Console.Write(lineset2);
@@ -452,13 +420,6 @@ namespace ProgPairGame
                     Console.Write(lineset4);
                     Console.Write(lineset5);
                     Console.Write(lineset6);
-                    //Console.ForegroundColor = ConsoleColor.DarkCyan;
-                    //Console.ForegroundColor = ConsoleColor.Cyan;
-                    //Console.ForegroundColor = ConsoleColor.DarkCyan;
-                    //Console.ForegroundColor = ConsoleColor.DarkBlue;
-                    //Console.ForegroundColor = ConsoleColor.Cyan;
-                    //Console.ForegroundColor = ConsoleColor.DarkGray;
-                    //Console.ForegroundColor = ConsoleColor.DarkCyan;
                 }
             }
 
