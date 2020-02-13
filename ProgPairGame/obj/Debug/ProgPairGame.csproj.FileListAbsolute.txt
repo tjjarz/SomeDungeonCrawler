@@ -1,0 +1,12 @@
+C:\Users\Tom\source\repos\ProgPair\ProgPairGame\bin\Debug\ProgPairGame.exe.config
+C:\Users\Tom\source\repos\ProgPair\ProgPairGame\bin\Debug\ProgPairGame.exe
+C:\Users\Tom\source\repos\ProgPair\ProgPairGame\bin\Debug\ProgPairGame.pdb
+C:\Users\Tom\source\repos\ProgPair\ProgPairGame\obj\Debug\ProgPairGame.csprojAssemblyReference.cache
+C:\Users\Tom\source\repos\ProgPair\ProgPairGame\obj\Debug\ProgPairGame.exe
+C:\Users\Tom\source\repos\ProgPair\ProgPairGame\obj\Debug\ProgPairGame.pdb
+C:\Codespace\DotNetProjects\ProgPair\ProgPairGame\bin\Debug\ProgPairGame.exe.config
+C:\Codespace\DotNetProjects\ProgPair\ProgPairGame\bin\Debug\ProgPairGame.exe
+C:\Codespace\DotNetProjects\ProgPair\ProgPairGame\bin\Debug\ProgPairGame.pdb
+C:\Codespace\DotNetProjects\ProgPair\ProgPairGame\obj\Debug\ProgPairGame.csprojAssemblyReference.cache
+C:\Codespace\DotNetProjects\ProgPair\ProgPairGame\obj\Debug\ProgPairGame.exe
+C:\Codespace\DotNetProjects\ProgPair\ProgPairGame\obj\Debug\ProgPairGame.pdb
