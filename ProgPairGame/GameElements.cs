@@ -111,10 +111,15 @@ namespace ProgPairGame
                     player.Inventory.Add(target);
                     room.HiddenContents.Remove(target);
                     room.RoomContents.Remove(target);
-                    return "you pick up the macguffin!";
+                    return "you pick up the goober!";
                 case "tripwire":
                     IsAlive = false;
-                    return "You tripped on a wire and died.";
+                    return "You tripped on a wire and fell on your face! HOW EMBARASSING!";
+
+                case "sweetloot":
+                    player.Inventory.Add(target);
+                    room.HiddenContents.Remove(target);
+                    return "You collect the Gold!";
                 case "exit":
                     if (player.HasMacguffin == true) { player.IsAQuitter = true; return "You have succeeded where all have failed! HUZZAH";  }
 
